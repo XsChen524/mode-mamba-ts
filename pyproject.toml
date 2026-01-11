@@ -1,0 +1,40 @@
+[project]
+name = "mode-mamba"
+version = "1.0.0"
+description = "MODE Mamba"
+requires-python = "3.12.12"
+dependencies = [
+	"nvidia-cuda-runtime-cu12 (==12.8.90)",
+	"nvidia-cudnn-cu12 (==9.10.2.21)",
+	"torch (==2.8.0)",
+	"triton (==3.4.0)",
+	"scikit-learn (==1.7.2)",
+	"numpy (>=1.26.0,<2.0.0)",
+	"reformer-pytorch (==1.4.4)",
+	"pandas (>=2.3.3,<3.0.0)",
+	"ipykernel (>=7.1.0,<8.0.0)",
+	"matplotlib (>=3.10.8,<4.0.0)",
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires      = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = ["poethepoet (>=0.37.0,<0.38.0)"]
+
+[tool.poe.tasks]
+echo = "python -c \"print('hello world!')\""
+clean = """sh -c 'rm -rf temp/results/* temp/test_results/* temp/checkpoints/* && find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null; find . -type f -name "*.pyc" -delete 2>/dev/null; find . -type f -name ".pytest_cache" -exec rm -rf {} + 2>/dev/null; find . -type d -name ".pytest_cache" -exec rm -rf {} + 2>/dev/null; find . -type d -name ".ipynb_checkpoints" -exec rm -rf {} + 2>/dev/null'"""
+cuda = """python -c "
+import torch
+print('PyTorch Version:', torch.__version__)
+print('CUDA Available:', torch.cuda.is_available())
+print('CUDA Version:', torch.version.cuda)
+if torch.cuda.is_available():
+	print('GPU Device Name:', torch.cuda.get_device_name(0))
+	print('Number of GPUs:', torch.cuda.device_count())
+""""

@@ -1,0 +1,133 @@
+.claude
+.specify
+
+CLAUDE.md
+assets/*
+!assets/figures/*
+temp/*
+data/*
+nohup.out
+
+scripts/example/*
+
+output/case_study/record/*.npy
+
+# Claude Code
+.claude/settings.local.json
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Mypy
+.mypy_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django / Flask / DB
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+instance/
+.webassets-cache
+
+# Sphinx
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv / pipenv
+.python-version
+Pipfile.lock
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+venv*/
+env.bak/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Sensitive / env files
+.env
+.env.*
+secrets.json
+settings.local.py
+
+# Misc
+*.log
+*.tmp
+*.bak

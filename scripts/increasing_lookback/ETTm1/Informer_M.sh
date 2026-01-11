@@ -1,0 +1,103 @@
+export CUDA_VISIBLE_DEVICES=0
+
+model_name=${model_name:-Informer_M}
+
+python -u scripts/run.py \
+	--model_id ETTm1_48_96 \
+	--is_training 1 \
+	--root_path ./data/ETT-small/ \
+	--data_path ETTm1.csv \
+	--model $model_name \
+	--data ETTm1 \
+	--features M \
+	--seq_len 48 \
+	--pred_len 96 \
+	--e_layers 2 \
+	--enc_in 7 \
+	--dec_in 7 \
+	--c_out 7 \
+	--des 'LOOKBACK_INFORM_M' \
+	--d_model 256 \
+	--learning_rate 0.00005 \
+	--d_ff 256 \
+	--itr 1
+
+python -u scripts/run.py \
+	--model_id ETTm1_96_96 \
+	--is_training 1 \
+	--root_path ./data/ETT-small/ \
+	--data_path ETTm1.csv \
+	--model $model_name \
+	--data ETTm1 \
+	--features M \
+	--seq_len 96 \
+	--pred_len 96 \
+	--e_layers 2 \
+	--enc_in 7 \
+	--dec_in 7 \
+	--c_out 7 \
+	--des 'LOOKBACK_INFORM_M' \
+	--d_model 256 \
+	--d_ff 256 \
+	--learning_rate 0.00005 \
+	--itr 1
+
+python -u scripts/run.py \
+	--model_id ETTm1_192_96 \
+	--is_training 1 \
+	--root_path ./data/ETT-small/ \
+	--data_path ETTm1.csv \
+	--model $model_name \
+	--data ETTm1 \
+	--features M \
+	--seq_len 192 \
+	--pred_len 96 \
+	--e_layers 2 \
+	--enc_in 7 \
+	--dec_in 7 \
+	--c_out 7 \
+	--des 'LOOKBACK_INFORM_M' \
+	--d_model 256 \
+	--d_ff 256 \
+	--learning_rate 0.00005 \
+	--itr 1
+
+python -u scripts/run.py \
+	--model_id ETTm1_336_96 \
+	--is_training 1 \
+	--root_path ./data/ETT-small/ \
+	--data_path ETTm1.csv \
+	--model $model_name \
+	--data ETTm1 \
+	--features M \
+	--seq_len 336 \
+	--pred_len 96 \
+	--e_layers 2 \
+	--enc_in 7 \
+	--dec_in 7 \
+	--c_out 7 \
+	--des 'LOOKBACK_INFORM_M' \
+	--d_model 256 \
+	--d_ff 256 \
+	--learning_rate 0.00005 \
+	--itr 1
+
+python -u scripts/run.py \
+	--model_id ETTm1_720_96 \
+	--is_training 1 \
+	--root_path ./data/ETT-small/ \
+	--data_path ETTm1.csv \
+	--model $model_name \
+	--data ETTm1 \
+	--features M \
+	--seq_len 720 \
+	--pred_len 96 \
+	--e_layers 2 \
+	--enc_in 7 \
+	--dec_in 7 \
+	--c_out 7 \
+	--des 'LOOKBACK_INFORM_M' \
+	--d_model 256 \
+	--d_ff 256 \
+	--learning_rate 0.00005 \
+	--itr 1
